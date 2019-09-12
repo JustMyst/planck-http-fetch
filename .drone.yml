@@ -1,18 +1,29 @@
-local Pipeline(name, image) = {
-  kind: "pipeline",
-  name: name,
-  steps: [
-    {
-      name: "test",
-      image: image,
-      commands: [
-        "npm install",
-      ]
-    }
-  ]
-};
+---
+kind: pipeline
+name: test-on-amd64
 
-[
-  Pipeline("node6", "node:6"),
-  Pipeline("node8", "node:8"),
-]
+platform:
+  arch: amd64
+
+steps:
+- name: test
+  image: node
+  commands:
+  - npm install
+  - npm test
+
+---
+kind: pipeline
+name: test-on-arm64
+
+platform:
+  arch: arm64
+
+steps:
+- name: test
+  image: node
+  commands:
+  - npm install
+  - npm test
+
+...
