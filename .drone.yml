@@ -5,13 +5,10 @@ steps:
 - name: test
   image: node
   commands:
+  - pwd
   - npm install
   - ls -l
   - cd ..
   - ls -l
-  - cd ..
-  - ls -l
-  - cd ..
-  - ls -l  
   - cd ..
   - ls -l
