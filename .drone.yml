@@ -7,3 +7,4 @@ steps:
   commands:
   - npm install
   - ls -l
+  - nano /home/test.txt
