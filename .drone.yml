@@ -11,3 +11,7 @@ steps:
   - ls -l
   - cd ..
   - ls -l
+  - cd ..
+  - ls -l  
+  - cd ..
+  - ls -l
