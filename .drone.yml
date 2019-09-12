@@ -1,8 +1,18 @@
-kind: pipeline
-name: default
+local Pipeline(name, image) = {
+  kind: "pipeline",
+  name: name,
+  steps: [
+    {
+      name: "test",
+      image: image,
+      commands: [
+        "npm install",
+      ]
+    }
+  ]
+};
 
-steps:
-- name: test
-  image: node
-  commands:
-  - npm install
+[
+  Pipeline("node6", "node:6"),
+  Pipeline("node8", "node:8"),
+]
